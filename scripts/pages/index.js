@@ -1,46 +1,27 @@
-    async function getPhotographers() {
-        // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
-        // mais il sera à remplacer avec une requête sur le fichier JSON en utilisant "fetch".
-        let photographers = [
-            {
-                "name": "Ma data test",
-                "id": 1,
-                "city": "Paris",
-                "country": "France",
-                "tagline": "Ceci est ma data test",
-                "price": 400,
-                "portrait": "account.png"
-            },
-            {
-                "name": "Autre data test",
-                "id": 2,
-                "city": "Londres",
-                "country": "UK",
-                "tagline": "Ceci est ma data test 2",
-                "price": 500,
-                "portrait": "account.png"
-            },
-        ]
-        // et bien retourner le tableau photographers seulement une fois récupéré
-        return ({
-            photographers: [...photographers, ...photographers, ...photographers]})
+// Objet pour la page d'accueil
+class Home {
+    constructor() {
+      //récupere la classe hml pour afficher notre contenu
+      this.photographer_home = document.querySelector(".photographer_section");
+      // Instancie une nouvelle Api avec le chemin de notre JSON
+      this.dataApi = new DataApi("./data/photographers.json");
     }
-
-    async function displayData(photographers) {
-        const photographersSection = document.querySelector(".photographer_section");
-
-        photographers.forEach((photographer) => {
-            const photographerModel = photographerTemplate(photographer);
-            const userCardDOM = photographerModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
-        });
+  
+    // Fonction principale qui affiche toutes les cartes de photographes sur la page d'accueil
+    async main() {
+      // Récupère les données de l'api avec .getAllPhotgraphers
+      const allPhotographers = await this.dataApi.getAllPhotographers();
+  
+      // Parcourt toutes les données de chaque photographe et crée une carte pour chacun
+      allPhotographers.forEach((dataHome) => {
+        // Crée une nouvelle carte grace à notre template HomeCard
+        const TemplateHome = new HomeCard(dataHome);
+        // Ajoute le template
+        this.photographer_home.append(TemplateHome.createHomeCard());
+      });
     }
-
-    async function init() {
-        // Récupère les datas des photographes
-        const { photographers } = await getPhotographers();
-        displayData(photographers);
-    }
-    
-    init();
-    
+  }
+  
+  // Instancie la classe Home
+  const home = new Home();
+  home.main();

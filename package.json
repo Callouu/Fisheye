@@ -1,0 +1,19 @@
+{
+  "name": "fisheye",
+  "version": "1.0.0",
+  "description": "Dev P6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Callouu/Fisheye.git"
+  },
+  "author": "Alexis Bouvry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Callouu/Fisheye/issues"
+  },
+  "homepage": "https://github.com/Callouu/Fisheye#readme"
+}
