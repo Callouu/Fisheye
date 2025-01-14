@@ -1,1 +1,9 @@
-//Mettre le code JavaScript lié à la page photographer.html
+class profilPhotographer {
+    constructor() {
+        this.dataApi = new DataApi("./data/photographers.json");
+    }
+
+    async main() {
+        
+    }
+}

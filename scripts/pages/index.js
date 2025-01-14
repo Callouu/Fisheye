@@ -3,7 +3,7 @@ class Home {
     constructor() {
       //récupere la classe hml pour afficher notre contenu
       this.photographer_home = document.querySelector(".photographer_section");
-      // Instancie une nouvelle Api avec le chemin de notre JSON
+      // Instancie l'Api avec le chemin de notre JSON
       this.dataApi = new DataApi("./data/photographers.json");
     }
   
