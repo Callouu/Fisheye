@@ -54,7 +54,7 @@ header h1 {
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .photographer_section article img {
@@ -66,10 +66,18 @@ header h1 {
 
 .cards_country {
     color: #901C1C;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 }
 
 .cards_info {
     text-align: center;
+    line-height: 1.5;
+}
+.cards_tagline {
+    font-size: 14px;
+}
+.cards_price {
+    color: #757575;
+    font-size: 12px;
 }

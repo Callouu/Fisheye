@@ -1,7 +1,7 @@
 // Objet pour la page d'accueil
 class Home {
     constructor() {
-      //récupere la classe hml pour afficher notre contenu
+      //récupere la classe html pour afficher notre contenu
       this.photographer_home = document.querySelector(".photographer_section");
       // Instancie l'Api avec le chemin de notre JSON
       this.dataApi = new PhotographerApi("./data/photographers.json");
@@ -9,7 +9,7 @@ class Home {
   
     // Fonction principale qui affiche toutes les cartes de photographes sur la page d'accueil
     async main() {
-      // Récupère les données de l'api avec .getAllPhotgraphers
+      // Récupère les données de l'api
       const photographersData = await this.dataApi.getPhotographers();
   
       // Parcourt toutes les données de chaque photographe et crée une carte pour chacun

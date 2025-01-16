@@ -5,9 +5,9 @@ class HomeCard {
       this._photographers = photographer;
     }
   
-    // Méthode pour créer une carte de photographe sur la page d'accueil
+    // Fonction pour creer la carte
     createHomeCard() {
-      // Création d'un élément HTML <article> pour la carte
+      // Création d'un élément <article> pour la carte
       const photographer_section = document.createElement("article");
       photographer_section.classList.add("card_profile");
       photographer_section.setAttribute("tabindex", "0");
@@ -19,7 +19,7 @@ class HomeCard {
                   <h2 tabindex="0" class='card_name' aria-label="Nom du photographe" >${this._photographers.name}</h2>
               </a>
               <div tabindex="0" class='cards_info' role="region">
-                <span tabindex="0" aria-hidden="true" class='cards_country'>${this._photographers.country}, ${this._photographers.city}</span>
+                <span tabindex="0" aria-hidden="true" class='cards_country'>${this._photographers.city}, ${this._photographers.country}</span>
                 <p tabindex="0" class='cards_tagline' aria-label="Phrase d'accroche du photographe">${this._photographers.tagline}</p>
                 <span tabindex="0" aria-hidden="true" class='cards_price'>${this._photographers.price} € / Jour</span>
               </div>
