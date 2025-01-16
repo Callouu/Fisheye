@@ -4,18 +4,20 @@ class Home {
       //récupere la classe hml pour afficher notre contenu
       this.photographer_home = document.querySelector(".photographer_section");
       // Instancie l'Api avec le chemin de notre JSON
-      this.dataApi = new DataApi("./data/photographers.json");
+      this.dataApi = new PhotographerApi("./data/photographers.json");
     }
   
     // Fonction principale qui affiche toutes les cartes de photographes sur la page d'accueil
     async main() {
       // Récupère les données de l'api avec .getAllPhotgraphers
-      const allPhotographers = await this.dataApi.getAllPhotographers();
+      const photographersData = await this.dataApi.getPhotographers();
   
       // Parcourt toutes les données de chaque photographe et crée une carte pour chacun
-      allPhotographers.forEach((dataHome) => {
+      photographersData
+      .map(photographer => new Photographer(photographer))
+      .forEach(photographer => {
         // Crée une nouvelle carte grace à notre template HomeCard
-        const TemplateHome = new HomeCard(dataHome);
+        const TemplateHome = new HomeCard(photographer);
         // Ajoute le template
         this.photographer_home.append(TemplateHome.createHomeCard());
       });

@@ -1,8 +1,8 @@
 // Création d'une classe HomeCard
 class HomeCard {
     // Le constructeur prend en paramètre les données de la page d'accueil
-    constructor(dataHome) {
-      this._photographers = dataHome;
+    constructor(photographer) {
+      this._photographers = photographer;
     }
   
     // Méthode pour créer une carte de photographe sur la page d'accueil
