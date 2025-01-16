@@ -11,7 +11,7 @@ class Profil {
         const profileHeader = new PhotographerHeader(photographer, this.id);
         // Si le photographe n'existe pas alors afficher erreur
         if(photographer == null) {
-            this.profilPhotographe.innerHTML = profileHeader.createNullPhotographer();
+            this.profilPhotographe.innerHTML = profileHeader.createErrorPhotographer();
         } else { // Si il existe
             // Afficher le header 
             this.profilPhotographe.innerHTML = profileHeader.createPhotographerHeader();
@@ -19,8 +19,7 @@ class Profil {
             const medias = await this.dataApi.getMediasFromPhotographer(this.id);
             // Afficher le carousel
             const profileMedias = new PhotographerPictures(medias);
-            this.profilPhotographe.innerHTML += profileMedias.createPhotographerMedias();
-            
+            this.profilPhotographe.innerHTML += profileMedias.createPhotographerMedias();  
         }
 
         // NOT OK 

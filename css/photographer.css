@@ -2,10 +2,22 @@
     display: none;
 }
 
-.photograph-header {
+.main_about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     background-color: #FAFAFA;
     height: 300px;
+    padding: 40px;
     margin: 0 100px;
+}
+
+.photographer_thumbnail {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100px;
 }
 
 .contact_button {
