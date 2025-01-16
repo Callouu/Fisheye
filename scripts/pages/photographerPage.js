@@ -7,9 +7,30 @@ class Profil {
     }
 
     async main() {
-        const photographerData = await this.dataApi.getPhotographers(this.id);
-        const profileHeader = new PhotographerHeader(photographerData);      
-        this.profilPhotographe.append(profileHeader.createPhotographerHeader());
+        const photographer = await this.dataApi.getPhotographer(this.id);
+        const profileHeader = new PhotographerHeader(photographer, this.id);
+        // Si le photographe n'existe pas alors afficher erreur
+        if(photographer == null) {
+            this.profilPhotographe.innerHTML = profileHeader.createNullPhotographer();
+        } else { // Si il existe
+            // Afficher le header 
+            this.profilPhotographe.innerHTML = profileHeader.createPhotographerHeader();
+            // Recuperer les medias du photographe
+            const medias = await this.dataApi.getMediasFromPhotographer(this.id);
+            // Afficher le carousel
+            const profileMedias = new PhotographerPictures(medias);
+            this.profilPhotographe.innerHTML += profileMedias.createPhotographerMedias();
+            
+        }
+
+        // NOT OK 
+        // this.profilPhotographe.append(profileHeader.createPhotographerHeader());
+        // photographerData
+        // .map(photographer => new Photographer(photographer))
+        // .forEach(photographer => { 
+        //     const profileHeader = new PhotographerHeader(photographer, this.id);      
+        //     this.profilPhotographe.append(profileHeader.createPhotographerHeader());
+        // });
     }
 }
 

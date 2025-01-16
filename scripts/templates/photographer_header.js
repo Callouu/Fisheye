@@ -5,12 +5,11 @@ class PhotographerHeader {
     };
 
     createPhotographerHeader() {
-        const profilePageHeader = document.querySelector(".main_about");
-        const formName = document.querySelector(".modal_form_name");
-        formName.textContent = this.photographer.name;
+        //const formName = document.querySelector(".modal_form_name");
+        //formName.textContent = this.photographer.name;
         const metaDescription = document.querySelector('meta[name="description"]');
         if (metaDescription) {
-            metaDescription.content = `Découvrez ${this.photographer.name}, photographe professionnel basé à ${this.photographer.city}, ${this.photographer.country} offrant ses services à partir de ${this.photographer.price} € / jour.`;
+           metaDescription.content = `Découvrez ${this.photographer.name}, photographe professionnel basé à ${this.photographer.city}, ${this.photographer.country} offrant ses services à partir de ${this.photographer.price} € / jour.`;
         };
         const about = `
             <div class="photographer_profile__infos">
@@ -19,9 +18,13 @@ class PhotographerHeader {
                 <p class="photographer_tagline">${this.photographer.tagline}</p>    
             </div>
             <button class="btn btn_cta" type="button" aria-label="Open contact form">Contactez-moi</button>
-            <img class="photographer_thumbnail" src="assets/images/photographers/thumbnails/${this.photographer.portrait}" alt="${this.photographer.name}">
+            <img class="photographer_thumbnail" src="assets/photographers/${this.photographer.portrait}" alt="${this.photographer.name}">
         `;
-        profilePageHeader.innerHTML = about;
+        // profilePageHeader.innerHTML = about;
         return about;
     };
+    createNullPhotographer() {
+        const nothing = `<p>CETTE PERSONNE N'EXISTE PAS</p>`
+        return nothing;
+    }
 };

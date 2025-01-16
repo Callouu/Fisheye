@@ -6,19 +6,22 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="scripts/api/api.js" defer></script>
+    <script src="scripts/models/photographer.js" defer></script>
     <script src="scripts/pages/photographerPage.js" defer></script>
-    <script src="./scripts/templates/photographer_header.js" defer></script>
-    <script src="./scripts/utils/contactForm.js" defer></script>
+    <script src="scripts/templates/photographer_header.js" defer></script>
+    <script src="scripts/templates/photographer_pictures.js" defer></script>
+    <script src="scripts/utils/contactForm.js" defer></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
       <a href="index.html">
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo">
     </a>
     </header>
     <main id="main">
       <div class="main_about"></div>
+      <div class="medias"></div>
       <section id="photographer_header"></section>
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
@@ -28,9 +31,9 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()">
         </header>
-				<form>
+				<form class = ".modal_form_name">
 					<div>
 						<label>Prénom</label>
 						<input />

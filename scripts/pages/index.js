@@ -10,7 +10,7 @@ class Home {
     // Fonction principale qui affiche toutes les cartes de photographes sur la page d'accueil
     async main() {
       // Récupère les données de l'api
-      const photographersData = await this.dataApi.getPhotographers();
+      const photographersData = await this.dataApi.getAllPhotographers();
   
       // Parcourt toutes les données de chaque photographe et crée une carte pour chacun
       photographersData
