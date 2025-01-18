@@ -5,6 +5,7 @@ class PhotographerHeader {
     };
 
     createPhotographerHeader() {
+        const profilePageHeader = document.querySelector('.main_about');
         //const formName = document.querySelector(".modal_form_name");
         //formName.textContent = this.photographer.name;
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -20,11 +21,15 @@ class PhotographerHeader {
             <button class="contact_button" type="button" aria-label="Open contact form" onclick="displayModal()">Contactez-moi</button>
             <img class="photographer_thumbnail" src="assets/photographers/${this.photographer.portrait}" alt="${this.photographer.name}">
         `;
-        // profilePageHeader.innerHTML = about;
+
+        profilePageHeader.innerHTML = about;
         return about;
     };
+
     createErrorPhotographer() {
+        const mainContent = document.querySelector("#main")
         const nothing = `<p>CETTE PERSONNE N'EXISTE PAS</p>`
+        mainContent.innerHTML = nothing
         return nothing;
     }
 };

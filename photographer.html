@@ -7,36 +7,47 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="scripts/api/api.js" defer></script>
     <script src="scripts/models/photographer.js" defer></script>
-    <script src="scripts/pages/photographerPage.js" defer></script>
+    <script src="scripts/models/Media.js" defer></script>
     <script src="scripts/templates/photographer_header.js" defer></script>
-    <script src="scripts/templates/photographer_pictures.js" defer></script>
+    <script src="scripts/templates/photographer_media.js" defer></script>
     <script src="scripts/utils/contactForm.js" defer></script>
+    <script src="scripts/pages/photographerPage.js" defer></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
       <a href="index.html">
-      <img src="assets/images/logo.png" class="logo">
+      <img src="assets/images/logo.png" alt="logo" class="logo">
     </a>
     </header>
     <main id="main">
-      <div class="main_about"></div>
-      <div class="medias"></div>
+      <section class="main_about"></section>
+      <div id="trier">
+        <label class="trier-texte" for="select-trier">Trier par </label>
+        <select id="select-trier" onchange="trier(this)">
+            <option disabled selected>---</option>
+            <option>Popularité</option>
+            <option>Date</option>
+            <option>Titre</option>
+        </select>
+    </div>
+      <section class="medias"></section>
+      <div id="contact_modal">
+        <div class="modal">
+          <header>
+            <h2>Contactez-moi</h2>
+            <img src="assets/icons/close.svg" alt="close" onclick="closeModal()">
+          </header>
+          <form class = ".modal_form_name">
+            <div>
+              <label>Prénom</label>
+              <input/>
+            </div>
+            <button class="contact_button">Envoyer</button>
+          </form>
+        </div>
+      </div>
     </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()">
-        </header>
-				<form class = ".modal_form_name">
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+
   </body>
 </html>

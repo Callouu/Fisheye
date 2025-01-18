@@ -1,6 +1,5 @@
 class Profil {
     constructor() {
-        this.profilPhotographe = document.querySelector('.main_about');
         this.dataApi = new PhotographerApi("./data/photographers.json");
         const url = new URLSearchParams(document.location.search);
         this.id = parseInt(url.get("id"));
@@ -11,15 +10,18 @@ class Profil {
         const profileHeader = new PhotographerHeader(photographer, this.id);
         // Si le photographe n'existe pas alors afficher erreur
         if(photographer == null) {
-            this.profilPhotographe.innerHTML = profileHeader.createErrorPhotographer();
+            profileHeader.createErrorPhotographer();
         } else { // Si il existe
             // Afficher le header 
-            this.profilPhotographe.innerHTML = profileHeader.createPhotographerHeader();
+            profileHeader.createPhotographerHeader()
             // Recuperer les medias du photographe
             const medias = await this.dataApi.getMediasFromPhotographer(this.id);
             // Afficher le carousel
-            const profileMedias = new PhotographerPictures(medias);
-            this.profilPhotographe.innerHTML += profileMedias.createPhotographerMedias();  
+            const profileMedias = new PhotographerMedias(medias, photographer); 
+            profileMedias.createPhotographerMedias(medias);  
+
+
+
         }
 
         // NOT OK 
