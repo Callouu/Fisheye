@@ -33,15 +33,27 @@
     font-size: 18px;
 }
 
-.photographer_image {
-    width: 300px;
-}
-
 .medias {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px 30px;
     margin: 0 100px 50px 100px;
+}
+
+
+.photographer_image, .photographer_video {
+    width: 350px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+
+
+.photographer_medias--infos {
+    display: flex;
+    justify-content: space-between;
 }
 
 .contact_button {
@@ -109,4 +121,18 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.errorPhotographer {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorPhotographer h2 {
+    padding: 30px 50px;
+    background-color: #901C1C;
+    font-size: 20px;
+    color: white;
 }

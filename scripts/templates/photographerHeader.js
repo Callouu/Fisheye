@@ -28,7 +28,11 @@ class PhotographerHeader {
 
     createErrorPhotographer() {
         const mainContent = document.querySelector("#main")
-        const nothing = `<p>CETTE PERSONNE N'EXISTE PAS</p>`
+        const nothing = `
+        <div class="errorPhotographer">
+        <h2>Oups ! il n'y a rien ici !</h2>
+        <div>
+        `
         mainContent.innerHTML = nothing
         return nothing;
     }

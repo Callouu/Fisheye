@@ -59,5 +59,6 @@ class PhotographerApi extends Api {
             }
         }
         return medias
-    } 
+    }
+
 }

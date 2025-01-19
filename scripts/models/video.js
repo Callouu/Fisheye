@@ -1,15 +1,14 @@
-class Video {
-    constructor(photo, nomPhotographe) {
-        this._id = photo.id;
-        this._photographerId = photo.photographerId;
-        this._title = photo.title;
-        this._video = photo.video;
-        this._tags = photo.tags;
-        this._likes = photo.likes;
-        this._date = photo.date;
-        this._price = photo.price;
-        this._description = photo.description;
-        this._nomPhotographe = nomPhotographe;
+class VideoData {
+    constructor(data) {
+        this._id = data.id;
+        this._photographerId = data.photographerId;
+        this._title = data.title;
+        this._video = data.video;
+        this._tags = data.tags;
+        this._likes = data.likes;
+        this._date = data.date;
+        this._price = data.price;
+        this._description = data.description;
     }
 
     get id() {
@@ -47,9 +46,4 @@ class Video {
     get description() {
         return this._description;
     }
-
-    get nomPhotographe() {
-        return this._nomPhotographe;
-    }
-
 }

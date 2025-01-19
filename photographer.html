@@ -7,16 +7,19 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="scripts/api/api.js" defer></script>
     <script src="scripts/models/photographer.js" defer></script>
-    <script src="scripts/models/Media.js" defer></script>
-    <script src="scripts/templates/photographer_header.js" defer></script>
-    <script src="scripts/templates/photographer_media.js" defer></script>
+    <script src="scripts/models/image.js" defer></script>
+    <script src="scripts/models/video.js" defer></script>
+    <script src="scripts/factories/MediaFactory.js"defer></script>
+    <script src="scripts/templates/photographerHeader.js" defer></script>
+    <script src="scripts/templates/photographerImage.js" defer></script>
+    <script src="scripts/templates/photographerVideo.js" defer></script>
     <script src="scripts/utils/contactForm.js" defer></script>
     <script src="scripts/pages/photographerPage.js" defer></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <a href="index.html">
+      <a href="index.html" alt="Fisheye Home page">
       <img src="assets/images/logo.png" alt="logo" class="logo">
     </a>
     </header>
@@ -24,7 +27,7 @@
       <section class="main_about"></section>
       <div id="trier">
         <label class="trier-texte" for="select-trier">Trier par </label>
-        <select id="select-trier" onchange="trier(this)">
+        <select id="select-trier" onchange="">
             <option disabled selected>---</option>
             <option>Popularité</option>
             <option>Date</option>

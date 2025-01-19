@@ -1,12 +1,9 @@
-import Image from '../models/image.js'
-import Video from '../models/video.js'
-
-class MediasFactory {
+class MediaFactory {
     constructor(data) {
         if (data.image) {
-            return new Image(data)
+            return new ImageData(data)
         } else if (data.video) {
-            return new Video(data)
+            return new VideoData(data)
         } else {
             throw 'Unknown data type'
         }

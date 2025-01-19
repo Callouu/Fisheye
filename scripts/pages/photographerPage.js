@@ -16,22 +16,24 @@ class Profil {
             profileHeader.createPhotographerHeader()
             // Recuperer les medias du photographe
             const medias = await this.dataApi.getMediasFromPhotographer(this.id);
+
             // Afficher le carousel
-            const profileMedias = new PhotographerMedias(medias, photographer); 
-            profileMedias.createPhotographerMedias(medias);  
+            //const profileMedias = new PhotographerImage(medias, photographer); 
+            //profileMedias.createPhotographerMedias(medias);  
+            // Parcours les medias du photographe pour chercher si c'est une image ou une video
+            medias.map(media => new MediaFactory(media))
+            .forEach(media => {
+                if("image" in media){
+                    let ImageMedias = new PhotographerImage(media, photographer); 
+                    ImageMedias.createPhotographerImage(); 
+                } else {
+                    let VideoMedias = new PhotographerVideo(media, photographer); 
+                    VideoMedias.createPhotographerVideo(); 
+                }
+            })
 
-
-
+            // Affiche les likes
         }
-
-        // NOT OK 
-        // this.profilPhotographe.append(profileHeader.createPhotographerHeader());
-        // photographerData
-        // .map(photographer => new Photographer(photographer))
-        // .forEach(photographer => { 
-        //     const profileHeader = new PhotographerHeader(photographer, this.id);      
-        //     this.profilPhotographe.append(profileHeader.createPhotographerHeader());
-        // });
     }
 }
 
