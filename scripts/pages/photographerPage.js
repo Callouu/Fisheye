@@ -33,6 +33,8 @@ class Profil {
             })
 
             // Affiche les likes
+            const profileLikes = new PhotographerLikes(medias, photographer)
+            profileLikes.createPhotographerLikes()
         }
     }
 }
