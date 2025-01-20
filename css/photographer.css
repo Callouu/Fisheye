@@ -34,26 +34,52 @@
 }
 
 .medias {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px 30px;
     margin: 0 100px 50px 100px;
 }
 
+.photographer_medias {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom:20px;
+}
 
 .photographer_image, .photographer_video {
-    width: 350px;
-    height: 300px;
+    width: 100%;
+    height: 350px;
     border-radius: 5px;
     object-fit: cover;
     margin-bottom: 10px;
 }
 
-
-
 .photographer_medias--infos {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.like_btn {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.photographer_likes {
+    position: fixed;
+    background-color:#DB8876;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px 5px 0px 0px;
+    bottom: 0;
+    font-size: 18px;
+    right: 35px;
+    width: fit-content;
 }
 
 .contact_button {

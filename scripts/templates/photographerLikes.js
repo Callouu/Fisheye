@@ -15,12 +15,16 @@ class PhotographerLikes {
           sum += result.likes;
         }
         const likeContent = `
-            <div class="photographer_likes">
+            <aside class="photographer_likes">
                 <div class="likes_content">
-                        <span>${sum}</span>
-                        <span>${this.photographer.price}€/Jour</span>
+                    <div class="likes_count">
+                    <span>${sum}</span>
+                    <i class="like_btn--fill fas fa-heart fa-2x"></i>
+                    </div>
+                    <span>${this.photographer.price}€/Jour</span>
                 </div>
-            </div>`
+            </aside>`
          mediaContent.innerHTML = likeContent
+         return likeContent
     }
 }

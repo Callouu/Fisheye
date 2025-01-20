@@ -28,12 +28,12 @@ class PhotographerHeader {
 
     createErrorPhotographer() {
         const mainContent = document.querySelector("#main")
-        const nothing = `
+        const errorContent = `
         <div class="errorPhotographer">
         <h2>Oups ! il n'y a rien ici !</h2>
         <div>
         `
-        mainContent.innerHTML = nothing
-        return nothing;
+        mainContent.innerHTML = errorContent
+        return errorContent;
     }
 };

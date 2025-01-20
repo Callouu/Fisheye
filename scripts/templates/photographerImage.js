@@ -8,16 +8,20 @@ class PhotographerImage {
     createPhotographerImage() {
         const mediaContent = document.querySelector(".medias")
         const imageContent = `
-            <div class="photographer_medias">
-                <div class="media_content">
+            <div class="photographer_medias" id="${this.medias.id}" data-titre="${this.medias.title}" data-date="${this.medias.date}" data-likes="${this.medias.likes}">
+                <a href="#" class="lightbox" aria-label="ouvre lightbox">
                     <img class="photographer_image" src="./assets/${this.photographer.name}/${this.medias.image}" alt="">
-                    <div class="photographer_medias--infos">
-                        <h2>${this.medias.title}</h2>
+                </a> 
+                <div class="photographer_medias--infos">
+                    <h2>${this.medias.title}</h2>
+                    <div class="like_btn">
                         <p>${this.medias.likes}</p>
+                        <i class="like__btn--fill fas fa-heart fa-2x"></i>
                     </div>
                 </div>
             </div>`
          mediaContent.innerHTML += imageContent
+         return imageContent
     }
     // createPhotographerImage() {
     //     const mediaContent = document.querySelector(".medias")
