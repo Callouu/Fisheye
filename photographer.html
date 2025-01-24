@@ -29,9 +29,9 @@
     </header>
     <main id="main">
       <section class="main_about"></section>
-      <div id="trier">
-        <label class="trier-texte" for="select-trier">Trier par </label>
-        <select id="select-trier" onchange="">
+      <div id="filter">
+        <label class="filter_text" for="select-filter">Trier par </label>
+        <select id="select-filter" onchange="profile.applyFilter(event)">
             <option disabled selected>---</option>
             <option>Popularité</option>
             <option>Date</option>
@@ -55,7 +55,13 @@
           </form>
         </div>
       </div>
+      <section id="lightbox">
+        <div class="lightbox_content">
+          <span class="close-lightbox" aria-label="Fermer la lightbox" onclick=""></span>
+          <span class="arrow" id="left-arrow" aria-label="Image précédente"></span>
+          <span class="arrow" id="right-arrow" aria-label="Image suivante"></span>
+        </div>
+      </section>
     </main>
-
   </body>
 </html>

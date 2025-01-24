@@ -19,7 +19,7 @@ class PhotographerLikes {
                 <div class="likes_content">
                     <div class="likes_count">
                     <span>${sum}</span>
-                    <i class="like_btn--fill fas fa-heart fa-2x"></i>
+                    <i class="like_btn fas fa-heart"></i>
                     </div>
                     <span>${this.photographer.price}€/Jour</span>
                 </div>

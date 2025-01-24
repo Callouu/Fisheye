@@ -33,11 +33,19 @@
     font-size: 18px;
 }
 
+#filter {
+    margin: 20px 0px 20px 100px;
+}
+
+#select_filter {
+    text-decoration: none;
+}
+
 .medias {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 30px;
-    margin: 0 100px 50px 100px;
+    margin: 0px 0px 50px 100px;
 }
 
 .photographer_medias {
@@ -62,11 +70,38 @@
     align-items: center;
 }
 
-.like_btn {
+.photographer_medias--infos h2 {
+    font-size: 24px;
+    color: #901C1C;
+}
+
+.count {
+    font-size: 24px;
+    color: #901C1C;
+}
+
+.like_info {
     align-self: flex-start;
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.like_btn {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+.like_btn--icon {
+    cursor: pointer;
+    font-size: 10px;
+    color: #901C1C;
+    font-size: 24px;
+}
+
+.liked {
+    color:#DB8876;
 }
 
 .photographer_likes {
@@ -82,6 +117,13 @@
     width: fit-content;
 }
 
+.likes_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -93,6 +135,15 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+.contact_button:hover {
+    color: black;
+    background-color:#DB8876;
+}
+
+.contact_button:focus {
+    color: black;
+    background-color:#DB8876;
 }
 
 .modal {
