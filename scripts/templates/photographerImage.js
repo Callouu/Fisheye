@@ -9,7 +9,7 @@ class PhotographerImage {
         //const mediaContent = document.querySelector(".medias")
         const imageContent = `
             <div class="photographer_medias" id="${this.medias.id}" data-titre="${this.medias.title}" data-date="${this.medias.date}" data-likes="${this.medias.likes}">
-                <a href="./assets/${this.photographer.name}/${this.medias.image}" class="link_lightbox" aria-label="open lightbox" data-id="${this.medias.id}">
+                <a href="./assets/${this.photographer.name}/${this.medias.image}" class="link_lightbox" aria-label="open lightbox" data-id="${this.medias.id}" title="${this.medias.title}">
                     <img class="photographer_image" src="./assets/${this.photographer.name}/${this.medias.image}" alt="image">
                 </a> 
                 <figcaption class="photographer_medias--infos">

@@ -68,7 +68,7 @@ class Profil {
             }
         })
         document.querySelector(".medias").innerHTML = mediasHtml
-        // Affiche les likes
+        //Calcul du nombre total de likes
         const profileLikes = new PhotographerLikes(this.medias, this.photographer)
         profileLikes.createPhotographerLikes()
 
@@ -127,15 +127,6 @@ class Profil {
         }
         this.medias = mediasFiltered
         this.content();
-    }
-
-    lightbox() {
-        const links = document.querySelectorAll('a[data-id]')
-        console.log(links)
-        links.forEach(link => link.addEventListener("click", event => {
-            event.preventDefault()
-            new LightBox(event.currentTarget)
-        }))
     }
 }
 

@@ -200,21 +200,6 @@ form input {
     border-radius: 5px;
 }
 
-.lightbox {
-    position:fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height:100%;
-    background-color:rgba(255,255,255,0.5);
-    z-index:100;
-}
-
-.lightbox__next,.lightbox__prev {
-    width: 8px;
-    
-}
-
 .errorPhotographer {
     height: 500px;
     display: flex;
@@ -229,25 +214,32 @@ form input {
     color: white;
 }
 
-
-
 .lightbox {
+    z-index: 10;
     display: none;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    height: 100vh;
+    background-color:rgba(255,255,255,0.6)
+
 }
 
 .lightbox-content {
+    position:relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 90%;
+    max-height: 1000px;
+    padding: 25px 60px 0;
+    background-color:white;
+    border-radius: 5px;
 }
 
 .lightbox.active {
@@ -262,11 +254,13 @@ form input {
 
 .lightbox .close {
     position: absolute;
-    top: 0;
-    right: 100px;
-    color: black;
+    background-color: black;
     font-size: 48px;
     cursor: pointer;
+    z-index: 100;
+    position: absolute;
+    top: 25px;
+    right: 5px;
 }
 
 .lightbox .navigation {
@@ -282,11 +276,44 @@ form input {
 .lightbox .navigation .next {
     background: rgba(255, 255, 255, 0.5);
     border: none;
-    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev, .next {
+    z-index: 100;
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    font-size:40px;
+
+}
+
+.prev {
+    left: 10px;
     cursor: pointer;
 }
 
-.lightbox_image {
-    width: 500px;
-    height: 500px;
+.next {
+    right: 10px;
+}
+
+.lightbox-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.lightbox-media figcaption {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color:#901C1C;
+    font-size:24px;
 }

@@ -1,7 +1,6 @@
 class LightBox {
-    constructor(mediaElement, photographer) {
+    constructor(mediaElement) {
         this.mediaElement = mediaElement;
-        this.photographer = photographer;
         this.mediaItems = Array.from(document.querySelectorAll('a[data-id]'));
         this.currentIndex = this.mediaItems.findIndex(item => item.dataset.id === mediaElement.dataset.id);
         this.lightboxElement = this.createLightBox();
@@ -14,7 +13,8 @@ class LightBox {
         lightbox.innerHTML = `
             <div class="lightbox-content">
                 <span class="close"><img src="assets/icons/close.svg" alt="close"></span>
-                <div class="lightbox-media"></div>
+                <div class="lightbox-media">
+                </div>
                 <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
                 <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
@@ -31,7 +31,7 @@ class LightBox {
     }
 
     openLightBox() {
-        this.lightboxElement.style.display = 'block';
+        this.lightboxElement.style.display = 'flex';
         this.displayMedia();
     }
 
@@ -43,11 +43,13 @@ class LightBox {
         const currentMedia = this.mediaItems[this.currentIndex];
         const mediaType = currentMedia.querySelector('img') ? 'image' : 'video';
         const mediaSrc = currentMedia.getAttribute('href');
-
+        const mediaTitle = currentMedia.getAttribute('title');
         const mediaContainer = this.lightboxElement.querySelector('.lightbox-media');
         mediaContainer.innerHTML = mediaType === 'image' 
-            ? `<img class="lightbox_image" src="${mediaSrc}" alt="${currentMedia.dataset.title}">` 
-            : `<video controls><source src="${mediaSrc}" type="video/mp4"></video>`;
+            ? `<img class="lightbox_image" src="${mediaSrc}" alt="${this.mediaItems.title}">
+                <figcaption>${mediaTitle}</figcaption>` 
+            : `<video controls><source src="${mediaSrc}" type="video/mp4"></video>
+                <figcaption>${mediaTitle}</figcaption>`;
     }
 
     showPreviousMedia() {
