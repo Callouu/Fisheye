@@ -17,17 +17,18 @@
     <script src="scripts/templates/photographerImage.js" defer></script>
     <script src="scripts/templates/photographerVideo.js" defer></script>
     <script src="scripts/templates/photographerLikes.js" defer></script>
-    <script src="scripts/utils/contactForm.js" defer></script>
+    <script src="scripts/templates/lightbox.js" defer></script>
     <script src="scripts/pages/photographerPage.js" defer></script>
+    <script src="scripts/utils/contactForm.js" defer></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header>
-      <a href="index.html" alt="Fisheye Home page">
-      <img src="assets/images/logo.png" alt="logo" class="logo">
+    <header role="banner" aria-label="En-tête de la page">
+      <a href="index.html" alt="Fisheye Home page" title="Lien vers la page d'acceuil">
+      <img src="assets/images/logo.png" alt="logo de fisheye" class="logo">
     </a>
     </header>
-    <main id="main">
+    <main id="main" role="main" aria-label="Contenu de la page du photographe">
       <section class="main_about"></section>
       <div id="filter">
         <label class="filter_text" for="select-filter">Trier par </label>
@@ -42,26 +43,22 @@
       <div class="likes"></div>
       <div id="contact_modal">
         <div class="modal">
-          <header>
+          <div class="modal_wrapper">
+            <div class="modal_title">
             <h2>Contactez-moi</h2>
             <img src="assets/icons/close.svg" alt="close" onclick="closeModal()">
-          </header>
-          <form class = ".modal_form_name">
-            <div>
-              <label>Prénom</label>
-              <input/>
-            </div>
-            <button class="contact_button">Envoyer</button>
-          </form>
+            <form class = ".modal_form_name">
+              <div>
+                <label>Prénom</label>
+                <input/>
+              </div>
+              <button class="contact_button">Envoyer</button>
+            </form>
+          </div>
         </div>
       </div>
-      <section id="lightbox">
-        <div class="lightbox_content">
-          <span class="close-lightbox" aria-label="Fermer la lightbox" onclick=""></span>
-          <span class="arrow" id="left-arrow" aria-label="Image précédente"></span>
-          <span class="arrow" id="right-arrow" aria-label="Image suivante"></span>
-        </div>
-      </section>
+      </div>
+      </div>
     </main>
   </body>
 </html>

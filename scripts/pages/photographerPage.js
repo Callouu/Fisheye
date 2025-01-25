@@ -8,6 +8,7 @@ class Profil {
     }
 
     async main() {
+
         this.photographer = await this.dataApi.getPhotographer(this.id);
         const profileHeader = new PhotographerHeader(this.photographer, this.id);
         // Si le photographe n'existe pas alors afficher erreur
@@ -20,7 +21,6 @@ class Profil {
             this.medias = await this.dataApi.getMediasFromPhotographer(this.id);
             // On affiche le contenu
             this.content()
-
             // Afficher le carousel
             //const profileMedias = new PhotographerImage(medias, photographer); 
             //profileMedias.createPhotographerMedias(medias);  
@@ -71,6 +71,17 @@ class Profil {
         // Affiche les likes
         const profileLikes = new PhotographerLikes(this.medias, this.photographer)
         profileLikes.createPhotographerLikes()
+
+        // Affiche la lightbox
+        const mediaElements = document.querySelectorAll('a[data-id]');
+        mediaElements.forEach(media => {
+            media.addEventListener('click', (event) => {
+            event.preventDefault();
+            const lightbox = new LightBox(media);
+            lightbox.openLightBox();
+            });
+        });
+
     }
     // Ajoute ou retire les likes
     like(id){
@@ -119,7 +130,8 @@ class Profil {
     }
 
     lightbox() {
-        const links = document.querySelectorAll('.link_lightbox')
+        const links = document.querySelectorAll('a[data-id]')
+        console.log(links)
         links.forEach(link => link.addEventListener("click", event => {
             event.preventDefault()
             new LightBox(event.currentTarget)
