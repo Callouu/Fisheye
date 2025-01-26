@@ -12,11 +12,11 @@ class LightBox {
         lightbox.classList.add('lightbox');
         lightbox.innerHTML = `
             <div class="lightbox-content">
-                <span class="close"><img src="assets/icons/close.svg" alt="close"></span>
+                <span class="close"><i class="btn_lightbox--close fa-solid fa-xmark"></i></span>
                 <div class="lightbox-media">
                 </div>
-                <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-                <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="prev"><i class=" btn_lightbox fa-solid fa-arrow-left"></i></button>
+                <button class="next"><i class=" btn_lightbox fa-solid fa-arrow-right"></i></button>
             </div>
         `;
         document.body.appendChild(lightbox);

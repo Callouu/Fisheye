@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <script src="scripts/models/photographer.js" defer></script>
     <script src="scripts/models/image.js" defer></script>
     <script src="scripts/models/video.js" defer></script>
-    <script src="scripts/factories/MediaFactory.js"defer></script>
+    <script src="scripts/factories/MediaFactory.js" defer></script>
     <script src="scripts/templates/photographerHeader.js" defer></script>
     <script src="scripts/templates/photographerImage.js" defer></script>
     <script src="scripts/templates/photographerVideo.js" defer></script>
@@ -23,17 +23,16 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header role="banner" aria-label="En-tête de la page">
-      <a href="index.html" alt="Fisheye Home page" title="Lien vers la page d'acceuil">
+    <header aria-label="En-tête de la page">
+      <a href="index.html" title="Lien vers la page d'acceuil">
       <img src="assets/images/logo.png" alt="logo de fisheye" class="logo">
     </a>
     </header>
-    <main id="main" role="main" aria-label="Contenu de la page du photographe">
+    <main id="main" aria-label="Contenu de la page du photographe">
       <section class="main_about"></section>
       <div id="filter">
         <label class="filter_text" for="select-filter">Trier par </label>
         <select id="select-filter" onchange="profile.applyFilter(event)">
-            <option disabled selected>---</option>
             <option>Popularité</option>
             <option>Date</option>
             <option>Titre</option>
@@ -46,19 +45,35 @@
           <div class="modal_wrapper">
             <div class="modal_title">
             <h2>Contactez-moi</h2>
-            <img src="assets/icons/close.svg" alt="close" onclick="closeModal()">
-            <form class = ".modal_form_name">
-              <div>
+            <button class="btn_close" type="button" aria-label="fermer formulaire de contact">
+            <i class="btn_close--icon fa-solid fa-xmark"></i>
+            </button>
+            </div>
+            <div class="modal_name">
+              <span id="modal_photographer"></span>
+            </div>
+            </div>
+            <form class=".modal_form_name" method="get">
+              <div class="formData">
                 <label>Prénom</label>
-                <input/>
+                <input class="text-control" type="text" id="first">
               </div>
-              <button class="contact_button">Envoyer</button>
+              <div class="formData">
+                <label>Nom</label>
+                <input class="text-control" type="text" id="last">
+              </div>
+              <div class="formData">
+                <label>Email</label>
+                <input class="text-control" type="text" id="email">
+              </div>
+              <div class="formData">
+                <label>Votre message</label>
+                <textarea class="text-control" id="message"></textarea>
+              </div>
+              <button class="contact_button" id="formBtn">Envoyer</button>
             </form>
           </div>
         </div>
-      </div>
-      </div>
-      </div>
     </main>
   </body>
 </html>

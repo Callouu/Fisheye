@@ -39,6 +39,8 @@
 
 #select_filter {
     text-decoration: none;
+    border: 0;
+    padding: 20px;
 }
 
 .medias {
@@ -146,10 +148,23 @@
     background-color:#DB8876;
 }
 
+#contact_modal {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #C4C4C466;
+
+}
+
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,19 +173,37 @@
     margin: auto;
 }
 
+.modal_wrapper {
+    width: 100%;
+}
+
 .modal header {
     justify-content: space-between;
     width: 100%;
 }
 
-.modal header img {
-    cursor: pointer;
+.modal_title {
+    display:flex;
+    justify-content: space-between;
 }
 
-.modal header h2 {
-    font-size: 64px;
+.modal_title button {
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
+.btn_close--icon {
+    font-size:42px;
+    color:white;
+}
+
+.modal_title h2, .modal_name {
+    font-size: 50px;
     font-weight: normal;
-    text-align: center;
+}
+
+.modal_name {
+    margin: 10px 0 20px 0;
 }
 
 form {
@@ -180,24 +213,29 @@ form {
     align-items: flex-start;
 }
 
-form label {
-    color: #312E2E;
-    font-size: 36px;
-}
-
-form div {
+.formData {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
+    gap: 5px;
+    margin-bottom: 5px;
 }
 
-form input {
+.formData label {
+    color: #312E2E;
+    font-size: 28px;
+}
+
+.formData input {
     width: 100%;
-    height: 68px;
+    height: 50px;
     border: none;
     border-radius: 5px;
+}
+
+.formData textarea {
+    height: 150px;
+    margin-bottom: 26px;
 }
 
 .errorPhotographer {
@@ -254,13 +292,13 @@ form input {
 
 .lightbox .close {
     position: absolute;
-    background-color: black;
     font-size: 48px;
     cursor: pointer;
     z-index: 100;
     position: absolute;
     top: 25px;
     right: 5px;
+    padding: 20px;
 }
 
 .lightbox .navigation {
@@ -285,7 +323,7 @@ form input {
     position:absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 5px;
+    padding: 20px;
     font-size:40px;
 
 }
@@ -297,6 +335,13 @@ form input {
 
 .next {
     right: 10px;
+}
+
+.btn_lightbox {
+    color:#901C1C
+}
+.btn_lightbox--close {
+    color: #901C1C;
 }
 
 .lightbox-media {

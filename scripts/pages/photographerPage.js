@@ -21,6 +21,7 @@ class Profil {
             this.medias = await this.dataApi.getMediasFromPhotographer(this.id);
             // On affiche le contenu
             this.content()
+            this.contactForm()
             // Afficher le carousel
             //const profileMedias = new PhotographerImage(medias, photographer); 
             //profileMedias.createPhotographerMedias(medias);  
@@ -127,6 +128,11 @@ class Profil {
         }
         this.medias = mediasFiltered
         this.content();
+    }
+
+    contactForm() {
+        const formName = document.getElementById('modal_photographer')
+        formName.innerText = this.photographer.name
     }
 }
 
