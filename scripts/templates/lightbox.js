@@ -11,6 +11,8 @@ class LightBox {
     createLightBox() {
         const lightbox = document.createElement('div');
         lightbox.classList.add('lightbox');
+        lightbox.setAttribute("role", "dialog")
+        lightbox.setAttribute("aria-modal", "true")
         lightbox.innerHTML = `
             <div class="lightbox-content" aria-label="Media closeup view" role="dialog">
                 <button class="close" aria-label="close dialog"><i class="btn_lightbox--close fa-solid fa-xmark"></i></button>

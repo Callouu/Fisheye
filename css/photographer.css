@@ -448,8 +448,7 @@ form {
     cursor: pointer;
 }
 .contact_button:hover {
-    color: black;
-    background-color:#DB8876;
+    border:2px solid black;
 }
 
 .contact_button:focus {

@@ -6,6 +6,7 @@ const email = document.getElementById('email')
 const message = document.getElementById('message')
 const nameRegex = new RegExp("^[a-zA-Z-]{3,}$")
 const emailRegex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+")
+const messageRegex = new RegExp("[A-Za-z0-9|\s]{10,200}")
 
 
 // Afficher le formulaire
@@ -16,7 +17,6 @@ function displayModal() {
 
 // Fermer le formulaire
 function closeModal() {
-    const parent = document.getElementById('first').parentNode;
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
@@ -30,7 +30,7 @@ closeBtn.addEventListener("click", closeModal)
 * @returns {boolean} : true or false
 */
 function validFirstName(first) {
-    const parent = document.getElementById('first').parentNode;
+    const parent = document.getElementById('firstname').parentNode;
 
     if (!nameRegex.test(first)) {
         parent.setAttribute('data-error', 'Veuillez entrer 3 caractères ou plus');
@@ -48,7 +48,7 @@ function validFirstName(first) {
 * @returns {boolean} : true or false
 */
 function validLastName(last) {
-    const parent = document.getElementById('last').parentNode;
+    const parent = document.getElementById('lastname').parentNode;
 
     if (!nameRegex.test(last)) {
         parent.setAttribute('data-error', 'Veuillez entrer 3 caractères ou plus');
@@ -86,8 +86,8 @@ function validEmail(email) {
 function validMessage(message) {
     const parent = document.getElementById('message').parentNode;
 
-    if (message == null) {
-        parent.setAttribute('data-error', 'Le message n\'est pas valide');
+    if (!messageRegex.test(message)) {
+        parent.setAttribute('data-error', 'Il faut 10 caractères minimum');
         parent.setAttribute('data-error-visible', 'true');
         return false
     } else {
