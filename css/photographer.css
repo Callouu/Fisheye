@@ -1,7 +1,3 @@
-#contact_modal {
-    display: none;
-}
-
 .main_about {
     display: flex;
     justify-content: space-between;
@@ -87,12 +83,12 @@
     transform: translateX(-50%);
     width: 85%;
     height: 1px;
-    background-color: #DB8876;
+    background-color: white;
 }
 
 .btn_drop,
 .dropdown_content li button{
-    width: 180px;
+    width: 160px;
     height: 50px;
     padding: 15px;
     font-size: 18px;
@@ -322,30 +318,13 @@
 }
 
 /* CONTACT FORM */
-.contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.contact_button:hover {
-    color: black;
-    background-color:#DB8876;
-}
-
-.contact_button:focus {
-    color: black;
-    background-color:#DB8876;
+#contact_modal {
+    display: none;
 }
 
 #contact_modal {
     position:fixed;
+    z-index: 20;
     top: 0;
     left: 0;
     width: 100%;
@@ -433,6 +412,28 @@ form {
     height: 150px;
     margin-bottom: 26px;
     border-radius: 5px;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact_button:hover {
+    color: black;
+    background-color:#DB8876;
+}
+
+.contact_button:focus {
+    color: black;
+    background-color:#DB8876;
 }
 
 /* ERROR */
