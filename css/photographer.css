@@ -406,13 +406,34 @@ form {
     height: 50px;
     border: none;
     border-radius: 5px;
+    padding-left: 10px;
 }
 
 .formData textarea {
     height: 150px;
-    margin-bottom: 26px;
     border-radius: 5px;
+    width: 100%;
 }
+
+.formData[data-error]::after {
+    content: attr(data-error);
+    color: black;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    text-align: left;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+  }
+.formData[data-error-visible="true"]::after {
+    opacity: 1;
+}
+
+.formData[data-error-visible="true"] .text-control {
+    content: attr(data-error);
+    border: 2px solid #e54858;
+  }
 
 .contact_button {
     font-size: 20px;
