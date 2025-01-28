@@ -9,6 +9,7 @@ class VideoData {
         this._date = data.date;
         this._price = data.price;
         this._description = data.description;
+        this.is_liked = data.is_liked
     }
 
     get id() {

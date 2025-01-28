@@ -72,7 +72,6 @@ class Profil {
         //Calcul du nombre total de likes
         const profileLikes = new PhotographerLikes(this.medias, this.photographer)
         profileLikes.createPhotographerLikes()
-
         // Affiche la lightbox
         const mediaElements = document.querySelectorAll('a[data-id]');
         mediaElements.forEach(media => {
@@ -106,7 +105,7 @@ class Profil {
     // Filtre les medias
     applyFilter(filter){
         // on recupere la valeur du select
-        const filterValue = filter.target.value
+        const filterValue = filter
         const mediasFiltered = Array.from(this.medias)
         if (filterValue == "Popularité") {
             // Trier par like
