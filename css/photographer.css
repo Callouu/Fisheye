@@ -240,8 +240,8 @@
 
 .lightbox img,
 .lightbox video {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 95%;
+    height: calc(90% - 50px)
 }
 
 .lightbox .close {

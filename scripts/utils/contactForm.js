@@ -1,10 +1,10 @@
 const closeBtn = document.querySelector('.btn_close')
 const formBtn = document.getElementById('formBtn')
-const firstName = document.getElementById('first')
-const lastName = document.getElementById('last')
+const firstName = document.getElementById('firstname')
+const lastName = document.getElementById('lastname')
 const email = document.getElementById('email')
 const message = document.getElementById('message')
-const nameRegex = new RegExp("^[a-zA-Z-]{2,}$")
+const nameRegex = new RegExp("^[a-zA-Z-]{3,}$")
 const emailRegex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+")
 
 
@@ -33,7 +33,7 @@ function validFirstName(first) {
     const parent = document.getElementById('first').parentNode;
 
     if (!nameRegex.test(first)) {
-        parent.setAttribute('data-error', 'Veuillez entrer 2 caractères ou plus');
+        parent.setAttribute('data-error', 'Veuillez entrer 3 caractères ou plus');
         parent.setAttribute('data-error-visible', 'true');
         return false
     } else {
@@ -51,7 +51,7 @@ function validLastName(last) {
     const parent = document.getElementById('last').parentNode;
 
     if (!nameRegex.test(last)) {
-        parent.setAttribute('data-error', 'Veuillez entrer 2 caractères ou plus');
+        parent.setAttribute('data-error', 'Veuillez entrer 3 caractères ou plus');
         parent.setAttribute('data-error-visible', 'true');
         return false
     } else {

@@ -14,8 +14,8 @@ class HomeCard {
   
       // Contenu HTML de la carte
       const homeCard = `
-              <a href="photographer.html?id=${this._photographers.id}" title="Visitez la page de profil de : ${this._photographers.name} ? " role="link">
-                  <img tabindex="0" alt="Photo de profil de ${this._photographers.name}" aria-hidden="true" class='card_picture' src="./assets/photographers/${this._photographers.portrait}">
+              <a href="photographer.html?id=${this._photographers.id}" role="link" aria-label="Voir le profil de ${this._photographers.name}">
+                  <img tabindex="0" alt="${this._photographers.name}" aria-hidden="true" class='card_picture' src="./assets/photographers/${this._photographers.portrait}">
                   <h2 tabindex="0" class='card_name' aria-label="Nom du photographe" >${this._photographers.name}</h2>
               </a>
               <div tabindex="0" class='cards_info' role="region">

@@ -12,12 +12,12 @@ class LightBox {
         const lightbox = document.createElement('div');
         lightbox.classList.add('lightbox');
         lightbox.innerHTML = `
-            <div class="lightbox-content">
-                <span class="close"><i class="btn_lightbox--close fa-solid fa-xmark"></i></span>
+            <div class="lightbox-content" aria-label="Media closeup view" role="dialog">
+                <button class="close" aria-label="close dialog"><i class="btn_lightbox--close fa-solid fa-xmark"></i></button>
                 <div class="lightbox-media">
                 </div>
-                <button class="prev"><i class=" btn_lightbox fa-solid fa-arrow-left"></i></button>
-                <button class="next"><i class=" btn_lightbox fa-solid fa-arrow-right"></i></button>
+                <button class="prev" aria-label="previous image"><i class=" btn_lightbox fa-solid fa-chevron-left"></i></button>
+                <button class="next" aria-label="next image"><i class=" btn_lightbox fa-solid fa-chevron-right"></i></button>
             </div>
         `;
         document.body.appendChild(lightbox);
@@ -64,7 +64,7 @@ class LightBox {
         const mediaContainer = this.lightboxElement.querySelector('.lightbox-media');
         // On envoi la classe img ou video en fonction du type de media
         mediaContainer.innerHTML = mediaType === 'image' 
-            ? `<img class="lightbox_image" src="${mediaSrc}" alt="${this.mediaItems.title}">
+            ? `<img class="lightbox_image" src="${mediaSrc}" alt="${mediaTitle}">
                 <figcaption>${mediaTitle}</figcaption>` 
             : `<video><source src="${mediaSrc}" type="video/mp4" controls></video>
                 <figcaption>${mediaTitle}</figcaption>`;
