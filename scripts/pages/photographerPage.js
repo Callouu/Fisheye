@@ -8,7 +8,6 @@ class Profil {
     }
 
     async main() {
-
         this.photographer = await this.dataApi.getPhotographer(this.id);
         const profileHeader = new PhotographerHeader(this.photographer, this.id);
         // Si le photographe n'existe pas alors afficher erreur
@@ -22,34 +21,6 @@ class Profil {
             // On affiche le contenu
             this.content()
             this.contactForm()
-            // Afficher le carousel
-            //const profileMedias = new PhotographerImage(medias, photographer); 
-            //profileMedias.createPhotographerMedias(medias);  
-            // Parcours les medias du photographe pour chercher si c'est une image ou une video
-            // let mediasHtml = ""
-            // this.medias.map(media => new MediaFactory(media))
-            // .forEach(media => {
-            //     if("image" in media){
-            //         let ImageMedias = new PhotographerImage(media, this.photographer); 
-            //         mediasHtml += ImageMedias.createPhotographerImage();
-            //     } else {
-            //         let VideoMedias = new PhotographerVideo(media, this.photographer); 
-            //         mediasHtml += VideoMedias.createPhotographerVideo(); 
-            //     }
-            // })
-            // document.querySelector(".medias").innerHTML = mediasHtml
-            // //Calcul du nombre total de likes
-            // // const likeData = await this.dataApi.getMediasFromPhotographer(this.id);
-            // // let likeSum = 0
-            // // for (let i = 0; i < likeData.length; i++) {
-            // //     const result = likeData[i];
-            // //     //on additionne toute les datas des likes
-            // //     likeSum += result.likes;
-            // //   }
-            // const likeBtn = document.querySelector(".like_btn")
-            // // Affiche les likes
-            // const profileLikes = new PhotographerLikes(this.medias, this.photographer)
-            // profileLikes.createPhotographerLikes()
         }
     }
     content() {
@@ -135,5 +106,6 @@ class Profil {
     }
 }
 
+// On instancie notre class Profil avec la methode main
 const profile = new Profil();
 profile.main();

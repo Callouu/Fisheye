@@ -2,6 +2,7 @@ class PhotographerVideo {
     constructor(medias, photographer) {
         this.medias = medias;
         this.photographer = photographer
+        this.likedClass = this.medias["is_liked"] == true ? 'liked' : 'nolike'
     };
 
 
@@ -18,7 +19,7 @@ class PhotographerVideo {
                     <div class="like_info" role="group" aria-label="like numbers and like button">
                         <span class="count">${this.medias.likes}</span>
                         <button onclick="profile.like(${this.medias.id})" class="like_btn" aria-label="like" id="${this.medias.id}">
-                        <span class="like_btn--icon" aria-hidden="true">
+                        <span class="like_btn--icon ${this.likedClass}" aria-hidden="true">
                         <i class="like_icon fas fa-heart"></i></span>
                         </button>
                     </div>
