@@ -32,7 +32,7 @@
     <main id="main" aria-label="Contenu de la page du photographe">
       <section class="main_about"></section>
       <div id="filter">
-        <label class="filter_text" for="select-filter">Trier par </label>
+        <h2 class="filter_text" for="select-filter">Trier par </h2>
         <div class="filter_section" >
           <div class="dropdown">
             <button class="btn_drop" type="button" role="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="filter options" aria-label="Sort by">
@@ -60,7 +60,7 @@
         <div class="modal">
           <div class="modal_wrapper" aria-describedby="formTitle">
             <div class="modal_title">
-            <h2>Contactez-moi</h2>
+            <h2 id="formTitle">Contactez-moi</h2>
             <button class="btn_close" type="button" aria-label="close contact form">
             <i class="btn_close--icon fa-solid fa-xmark"></i>
             </button>
@@ -71,12 +71,12 @@
             </div>
             <form class=".modal_form_name" method="get">
               <div class="formData">
-                <label for="first" required>Prénom</label>
-                <input class="text-control" type="text" id="firstname" aria-labelledby="First name">
+                <label for="firstname" required>Prénom</label>
+                <input class="text-control" type="text" id="firstname" aria-labelledby="firstname">
               </div>
               <div class="formData">
                 <label for="lastname" required>Nom</label>
-                <input class="text-control" type="text" id="lastname" aria-labelledby="Last name">
+                <input class="text-control" type="text" id="lastname" aria-labelledby="lastname">
               </div>
               <div class="formData">
                 <label for="email" required>Email</label>
