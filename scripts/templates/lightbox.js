@@ -15,11 +15,11 @@ class LightBox {
         lightbox.setAttribute("aria-modal", "true")
         lightbox.innerHTML = `
             <div class="lightbox-content" aria-label="Media closeup view" role="dialog">
-                <button class="close" aria-label="close dialog"><i class="btn_lightbox--close fa-solid fa-xmark"></i></button>
+                <button class="close" aria-label="close dialog"><em class="btn_lightbox--close fa-solid fa-xmark"></em></button>
                 <div class="lightbox-media">
                 </div>
-                <button class="prev" aria-label="previous image"><i class=" btn_lightbox fa-solid fa-chevron-left"></i></button>
-                <button class="next" aria-label="next image"><i class=" btn_lightbox fa-solid fa-chevron-right"></i></button>
+                <button class="prev" aria-label="previous image"><em class=" btn_lightbox fa-solid fa-chevron-left"></em></button>
+                <button class="next" aria-label="next image"><em class=" btn_lightbox fa-solid fa-chevron-right"></em></button>
             </div>
         `;
         document.body.appendChild(lightbox);

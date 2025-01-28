@@ -18,7 +18,7 @@ class PhotographerImage {
                         <span class="count">${this.medias.likes}</span>
                         <button onclick="profile.like(${this.medias.id})" class="like_btn" aria-label="like" id="${this.medias.id}">
                         <span class="like_btn--icon ${this.likedClass}" aria-hidden="true">
-                        <i class="like_icon fas fa-heart"></i></span>
+                        <em class="like_icon fas fa-heart"></em></span>
                         </button>
                     </div>
                 </figcaption>
