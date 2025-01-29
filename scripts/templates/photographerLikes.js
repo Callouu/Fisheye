@@ -5,7 +5,7 @@ class PhotographerLikes {
         this.photographer = photographer
     };
 
-
+    // Fonction pour creer l'encart avec le nombre total de like du photographe
     createPhotographerLikes() {
         const mediaContent = document.querySelector(".likes")
         let sum = 0

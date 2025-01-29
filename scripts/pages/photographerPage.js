@@ -7,11 +7,11 @@ class Profil {
         this.medias = null;
         this.photographer = null
     }
-
+    // Contenu envoyé sur notre page HTML
     async main() {
         this.photographer = await this.dataApi.getPhotographer(this.id);
         // eslint-disable-next-line no-undef
-        const profileHeader = new PhotographerHeader(this.photographer, this.id);
+        const profileHeader = new PhotographerHeader(this.photographer);
         // Si le photographe n'existe pas alors afficher erreur
         if(this.photographer == null) {
             profileHeader.createErrorPhotographer();
@@ -24,6 +24,7 @@ class Profil {
             this.contactForm()
         }
     }
+    //Contenu HTML qui sera envoyé dans le main()
     content() {
         // Affiche le Header
         // eslint-disable-next-line no-undef
@@ -106,7 +107,7 @@ class Profil {
         this.medias = mediasFiltered
         this.content();
     }
-
+    // Affiche le nom du photographe dans le formulaire
     contactForm() {
         const formName = document.getElementById('modal_photographer')
         formName.innerText = this.photographer.name

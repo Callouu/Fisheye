@@ -1,10 +1,10 @@
 //eslint-disable-next-line no-unused-vars
 class PhotographerHeader {
-    constructor(photographer, idURL) {
+    constructor(photographer) {
         this.photographer = photographer;
-        this.idPage = idURL;
     };
 
+    // Fonction pour creer l'entete de la page du photographe
     createPhotographerHeader() {
         const profilePageHeader = document.querySelector('.main_about');
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -24,7 +24,7 @@ class PhotographerHeader {
         profilePageHeader.innerHTML = about;
         return about;
     };
-
+    // Fonction pour creer un visuel d'erreur si l'id n'est pas trouvé
     createErrorPhotographer() {
         const mainContent = document.querySelector("#main")
         const errorContent = `

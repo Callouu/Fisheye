@@ -1,8 +1,8 @@
-// Affichage du menu déroulant
 const filterMenu = document.querySelector(".dropdown_content");
 const filterMenuButton = document.querySelector(".btn_drop");
 const filterButtons = document.querySelectorAll(".dropdown_content button");
 
+// Affichage du menu déroulant
 filterMenuButton.addEventListener("click", () => {
     const isExpanded = filterMenuButton.getAttribute("aria-expanded") === "true" || false;
     filterMenuButton.setAttribute("aria-expanded", !isExpanded);
@@ -23,6 +23,7 @@ const allFilters = Array.from(document.querySelectorAll('.dropdown_content li bu
 let filterAlreadySelected = allFilters.find(filter => filter.textContent == currentFilter.textContent);
 filterAlreadySelected.style.display = 'none';
 
+// Affiche sur le bouton le texte selectioné du menu
 allFilters.forEach(filter => {
 filter.addEventListener('click', () => {
 currentFilter.textContent = filter.textContent;
@@ -31,6 +32,7 @@ if(filterAlreadySelected) {
 }
 filterAlreadySelected = filter;
 filterAlreadySelected.style.display = 'none';
+
 // On envoie la valeur du bouton dans notre profile pour permettre le triage
 // eslint-disable-next-line no-undef
 profile.applyFilter(filter.textContent)

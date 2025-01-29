@@ -6,7 +6,7 @@ class PhotographerImage {
         this.likedClass = this.medias["is_liked"] == true ? 'liked' : 'nolike'
     };
 
-
+    // Fonction pour creer la carte image
     createPhotographerImage() {
         const imageContent = `
             <article class="photographer_medias" id="${this.medias.id}" data-titre="${this.medias.title}" data-date="${this.medias.date}" data-likes="${this.medias.likes}">
