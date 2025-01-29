@@ -24,12 +24,12 @@
     <title>Fisheye - Photographe </title>
   </head>
   <body>
-    <header aria-label="En-tête de la page">
-      <a href="index.html" title="Lien vers la page d'acceuil">
+    <header>
+      <a href="index.html">
       <img src="assets/images/logo.png" alt="fisheye home page" class="logo" aria-label="Return to home page">
     </a>
     </header>
-    <main id="main" aria-label="Contenu de la page du photographe">
+    <main id="main">
       <section class="main_about"></section>
       <div id="filter">
         <h2 class="filter_text" for="select-filter">Trier par </h2>
@@ -56,7 +56,7 @@
   </div>
       <section class="medias"></section>
       <div class="likes"></div>
-      <div id="contact_modal">
+      <div id="contact_modal" aria-modal="true" role="dialog">
         <div class="modal">
           <div class="modal_wrapper" aria-describedby="formTitle">
             <div class="modal_title">
@@ -69,22 +69,22 @@
               <span id="modal_photographer"></span>
             </div>
             </div>
-            <form class=".modal_form_name" method="get">
+            <form class=".modal_form_name" novalidate>
               <div class="formData">
-                <label for="firstname" required>Prénom</label>
-                <input class="text-control" type="text" id="firstname" aria-labelledby="firstname">
+                <label for="firstname" >Prénom</label>
+                <input class="text-control" type="text" id="firstname" aria-labelledby="firstname" required>
               </div>
               <div class="formData">
-                <label for="lastname" required>Nom</label>
-                <input class="text-control" type="text" id="lastname" aria-labelledby="lastname">
+                <label for="lastname" >Nom</label>
+                <input class="text-control" type="text" id="lastname" aria-labelledby="lastname" required>
               </div>
               <div class="formData">
-                <label for="email" required>Email</label>
-                <input class="text-control" type="email" id="email" aria-labelledby="email">
+                <label for="email">Email</label>
+                <input class="text-control" type="email" id="email" aria-labelledby="email" required>
               </div>
               <div class="formData">
-                <label for="message" required>Votre message</label>
-                <textarea class="text-control" id="message" aria-labelledby="message"></textarea>
+                <label for="message" >Votre message</label>
+                <textarea class="text-control" id="message" aria-labelledby="message" required></textarea>
               </div>
               <button class="contact_button" type="submit" id="formBtn" aria-label="send">Envoyer</button>
             </form>
