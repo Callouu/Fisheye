@@ -122,14 +122,14 @@
 
 /* MEDIA SECTION */
 .medias {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
     gap: 10px 30px;
-    margin: 0px 15px 50px 100px;
+    margin: 0px 100px 50px 100px;
 }
 
 .photographer_medias {
-    width: 30%;
     display: flex;
     flex-direction: column;
     gap: 10px;
