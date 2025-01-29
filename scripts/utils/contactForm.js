@@ -14,6 +14,7 @@ const messageRegex = new RegExp("[A-Za-z0-9|]{10,200}")
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "flex";
+    closeBtn.focus()
 }
 
 // Fermer le formulaire
@@ -36,9 +37,11 @@ function validFirstName(first) {
     if (!nameRegex.test(first)) {
         parent.setAttribute('data-error', 'Veuillez entrer 3 caractères ou plus');
         parent.setAttribute('data-error-visible', 'true');
+        firstName.setAttribute("aria-invalid", "true")
         return false
     } else {
         parent.setAttribute('data-error-visible', 'false')
+        firstName.removeAttribute("aria-invalid")
         return true
     }
 }
@@ -54,9 +57,11 @@ function validLastName(last) {
     if (!nameRegex.test(last)) {
         parent.setAttribute('data-error', 'Veuillez entrer 3 caractères ou plus');
         parent.setAttribute('data-error-visible', 'true');
+        lastName.setAttribute("aria-invalid", "true")
         return false
     } else {
         parent.setAttribute('data-error-visible', 'false')
+        lastName.removeAttribute("aria-invalid")
         return true
     }
 }
@@ -66,15 +71,17 @@ function validLastName(last) {
 * @param {string} email : Adresse mail de la personne
 * @returns {boolean} : true or false
 */
-function validEmail(email) {
+function validEmail(mail) {
     const parent = document.getElementById('email').parentNode;
 
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(mail)) {
         parent.setAttribute('data-error', 'L\'email n\'est pas valide');
         parent.setAttribute('data-error-visible', 'true');
+        email.setAttribute("aria-invalid", "true")
         return false
     } else {
         parent.setAttribute('data-error-visible', 'false')
+        email.removeAttribute("aria-invalid")
         return true
     }
 }
@@ -84,15 +91,17 @@ function validEmail(email) {
 * @param {string} message : Message de la personne
 * @returns {boolean} : true or false
 */
-function validMessage(message) {
+function validMessage(messageValue) {
     const parent = document.getElementById('message').parentNode;
 
-    if (!messageRegex.test(message)) {
+    if (!messageRegex.test(messageValue)) {
         parent.setAttribute('data-error', 'Il faut 10 caractères minimum');
         parent.setAttribute('data-error-visible', 'true');
+        message.setAttribute("aria-invalid", "true")
         return false
     } else {
         parent.setAttribute('data-error-visible', 'false')
+        message.removeAttribute("aria-invalid")
         return true
     }
 }

@@ -17,9 +17,9 @@ class PhotographerVideo {
                 </a>   
                 <figcaption class="photographer_medias--infos">
                     <h2>${this.medias.title}</h2>
-                    <div class="like_info" role="group" aria-label="like numbers and like button">
+                    <div class="like_info" role="group">
                         <span class="count">${this.medias.likes}</span>
-                        <button onclick="profile.like(${this.medias.id})" class="like_btn" aria-label="like" id="${this.medias.id}">
+                        <button onclick="profile.like(${this.medias.id})" class="like_btn" aria-label="like button" id="${this.medias.id}">
                         <span class="like_btn--icon ${this.likedClass}" aria-hidden="true">
                         <em class="like_icon fas fa-heart"></em></span>
                         </button>

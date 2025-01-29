@@ -11,12 +11,12 @@ class LightBox {
     // Création de l'élément HTML ou sera envoyé notre média
     createLightBox() {
         const lightbox = document.querySelector('.lightbox');
-        lightbox.setAttribute("role", "dialog")
         lightbox.setAttribute("aria-modal", "true")
+        lightbox.setAttribute("role", "dialog")
         lightbox.innerHTML = `
-            <div class="lightbox-content" aria-label="Media closeup view" role="dialog">
+            <div class="lightbox-content" aria-label="Media closeup view">
                 <button class="close" aria-label="close dialog"><em class="btn_lightbox--close fa-solid fa-xmark"></em></button>
-                <div class="lightbox-media">
+                <div class="lightbox-media" role="media" aria-label="Current Media">
                 </div>
                 <button class="prev" aria-label="previous image"><em class=" btn_lightbox fa-solid fa-chevron-left"></em></button>
                 <button class="next" aria-label="next image"><em class=" btn_lightbox fa-solid fa-chevron-right"></em></button>
@@ -48,6 +48,7 @@ class LightBox {
     // Ouverture de la lightbox
     openLightBox() {
         this.lightboxElement.style.display = 'flex';
+        this.lightboxElement.querySelector('.close').focus()
         this.displayMedia();
     }
 
