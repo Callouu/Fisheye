@@ -125,7 +125,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px 30px;
-    margin: 0px 0px 50px 100px;
+    margin: 0px 15px 50px 100px;
 }
 
 .photographer_medias {
@@ -448,14 +448,25 @@ form {
     cursor: pointer;
 }
 .contact_button:hover {
-    border:2px solid black;
+    background-color:#DB8876;
+    color: black;
 }
 
 .contact_button:focus {
     color: black;
     background-color:#DB8876;
 }
+ #formBtn:hover {
+    background-color:#901C1C;
+    color:white;
+    border: 2px solid black;
+ }
 
+#formBtn:focus {
+    background-color:#901C1C;
+    color:white;
+    border: 2px solid black;
+}
 /* ERROR */
 .errorPhotographer {
     height: 500px;
