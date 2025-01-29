@@ -31,6 +31,7 @@ if(filterAlreadySelected) {
 }
 filterAlreadySelected = filter;
 filterAlreadySelected.style.display = 'none';
+// On envoie la valeur du bouton dans notre profile pour permettre le triage
 // eslint-disable-next-line no-undef
 profile.applyFilter(filter.textContent)
 })

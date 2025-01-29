@@ -10,8 +10,7 @@ class LightBox {
 
     // Création de l'élément HTML ou sera envoyé notre média
     createLightBox() {
-        const lightbox = document.createElement('div');
-        lightbox.classList.add('lightbox');
+        const lightbox = document.querySelector('.lightbox');
         lightbox.setAttribute("role", "dialog")
         lightbox.setAttribute("aria-modal", "true")
         lightbox.innerHTML = `
@@ -23,7 +22,6 @@ class LightBox {
                 <button class="next" aria-label="next image"><em class=" btn_lightbox fa-solid fa-chevron-right"></em></button>
             </div>
         `;
-        document.body.appendChild(lightbox);
         return lightbox;
     }
 
@@ -69,7 +67,7 @@ class LightBox {
         mediaContainer.innerHTML = mediaType === 'image' 
             ? `<img class="lightbox_image" src="${mediaSrc}" alt="${mediaTitle}">
                 <figcaption>${mediaTitle}</figcaption>` 
-            : `<video><source src="${mediaSrc}" type="video/mp4" controls></video>
+            : `<video controls><source src="${mediaSrc}" type="video/mp4"></video>
                 <figcaption>${mediaTitle}</figcaption>`;
     }
 

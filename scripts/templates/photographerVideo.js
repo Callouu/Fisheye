@@ -9,9 +9,9 @@ class PhotographerVideo {
 
     createPhotographerVideo() {
         const videoContent = `
-            <div class="photographer_medias" id="${this.medias.id}" data-titre="${this.medias.title}" data-date="${this.medias.date}" data-likes="${this.medias.likes}">
+            <article class="photographer_medias" id="${this.medias.id}" data-titre="${this.medias.title}" data-date="${this.medias.date}" data-likes="${this.medias.likes}">
                 <a href="./assets/${this.photographer.name}/${this.medias.video}" class="link_lightbox" aria-label="ouvre lightbox" data-id="${this.medias.id}" title="${this.medias.title}">
-                    <video class="photographer_video" alt="video" controls>
+                    <video class="photographer_video" alt="video">
                          <source src="./assets/${this.photographer.name}/${this.medias.video}" type="video/mp4">
                      </video>
                 </a>   
@@ -25,7 +25,7 @@ class PhotographerVideo {
                         </button>
                     </div>
                 </figcaption>
-            </div>`
+            </article>`
          return videoContent
     }
 };

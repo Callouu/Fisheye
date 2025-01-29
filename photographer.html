@@ -34,31 +34,31 @@
     </header>
     <main id="main">
       <section class="main_about"></section>
-      <div id="filter">
-        <h2 class="filter_text" for="select-filter">Trier par </h2>
+      <section id="filter">
+        <h2 class="filter_text">Trier par</h2>
         <div class="filter_section" >
           <div class="dropdown">
-            <button class="btn_drop" type="button" role="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="filter options" aria-label="Sort by">
+            <button class="btn_drop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown" aria-label="Sort by">
                 <span id="current_filter">Popularité</span>
                 <span class="fa-solid fa-chevron-up" aria-hidden="true"></span>
             </button>
-
-            <ul class="dropdown_content" aria-hidden="true">
+            <ul class="dropdown_content" id="dropdown" aria-hidden="true" role="listbox">
                 <li role="option">
-                    <button type="button" tabindex="-1" aria-label="Trier par Popularité">Popularité</button>
+                    <button type="button" tabindex="-1" aria-label="Sort by popularity">Popularité</button>
                 </li>
                 <li role="option">
-                    <button type="button" tabindex="-1" aria-label="Trier par Titre">Titre</button>
+                    <button type="button" tabindex="-1" aria-label="Sort by title">Titre</button>
                 </li>
                 <li role="option">
-                    <button type="button" tabindex="-1" aria-label="Trier par Date">Date</button>
+                    <button type="button" tabindex="-1" aria-label="Sort by Date">Date</button>
                 </li>
             </ul>
         </div>
       </div>
-  </div>
+    </section>
       <section class="medias"></section>
       <div class="likes"></div>
+    </main>
       <div id="contact_modal" aria-modal="true" role="dialog">
         <div class="modal">
           <div class="modal_wrapper" aria-describedby="formTitle">
@@ -93,6 +93,6 @@
             </form>
           </div>
         </div>
-    </main>
+        <div class="lightbox"></div>
   </body>
 </html>

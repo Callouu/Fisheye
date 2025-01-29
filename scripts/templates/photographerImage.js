@@ -9,7 +9,7 @@ class PhotographerImage {
 
     createPhotographerImage() {
         const imageContent = `
-            <div class="photographer_medias" id="${this.medias.id}" data-titre="${this.medias.title}" data-date="${this.medias.date}" data-likes="${this.medias.likes}">
+            <article class="photographer_medias" id="${this.medias.id}" data-titre="${this.medias.title}" data-date="${this.medias.date}" data-likes="${this.medias.likes}">
                 <a href="./assets/${this.photographer.name}/${this.medias.image}" class="link_lightbox" aria-label="ouvre lightbox" data-id="${this.medias.id}" title="${this.medias.title}">
                     <img class="photographer_image" src="./assets/${this.photographer.name}/${this.medias.image}" alt="${this.medias.title}">
                 </a> 
@@ -23,7 +23,7 @@ class PhotographerImage {
                         </button>
                     </div>
                 </figcaption>
-            </div>`
+            </article>`
          return imageContent
     }
 };
