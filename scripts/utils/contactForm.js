@@ -6,10 +6,11 @@ const email = document.getElementById('email')
 const message = document.getElementById('message')
 const nameRegex = new RegExp("^[a-zA-Z-]{3,}$")
 const emailRegex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+")
-const messageRegex = new RegExp("[A-Za-z0-9|\s]{10,200}")
+const messageRegex = new RegExp("[A-Za-z0-9|]{10,200}")
 
 
 // Afficher le formulaire
+//eslint-disable-next-line no-unused-vars
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "flex";

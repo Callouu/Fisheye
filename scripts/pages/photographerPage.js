@@ -1,5 +1,6 @@
 class Profil {
     constructor() {
+        //eslint-disable-next-line no-undef
         this.dataApi = new PhotographerApi("./data/photographers.json");
         const url = new URLSearchParams(document.location.search);
         this.id = parseInt(url.get("id"));
@@ -9,13 +10,13 @@ class Profil {
 
     async main() {
         this.photographer = await this.dataApi.getPhotographer(this.id);
+        // eslint-disable-next-line no-undef
         const profileHeader = new PhotographerHeader(this.photographer, this.id);
         // Si le photographe n'existe pas alors afficher erreur
         if(this.photographer == null) {
             profileHeader.createErrorPhotographer();
         } else { // Si il existe
             // Afficher le header 
-            // profileHeader.createPhotographerHeader()
             // Recuperer les medias du photographe
             this.medias = await this.dataApi.getMediasFromPhotographer(this.id);
             // On affiche le contenu
@@ -25,22 +26,27 @@ class Profil {
     }
     content() {
         // Affiche le Header
+        // eslint-disable-next-line no-undef
         const profileHeader = new PhotographerHeader(this.photographer, this.id);
         profileHeader.createPhotographerHeader()
         // Affiche les images/videos
         let mediasHtml = ""
+        // eslint-disable-next-line no-undef
         this.medias.map(media => new MediaFactory(media))
         .forEach(media => {
             if("image" in media){
+                // eslint-disable-next-line no-undef
                 let ImageMedias = new PhotographerImage(media, this.photographer); 
                 mediasHtml += ImageMedias.createPhotographerImage();
             } else {
+                // eslint-disable-next-line no-undef
                 let VideoMedias = new PhotographerVideo(media, this.photographer); 
                 mediasHtml += VideoMedias.createPhotographerVideo(); 
             }
         })
         document.querySelector(".medias").innerHTML = mediasHtml
         //Calcul du nombre total de likes
+        // eslint-disable-next-line no-undef
         const profileLikes = new PhotographerLikes(this.medias, this.photographer)
         profileLikes.createPhotographerLikes()
         // Affiche la lightbox
@@ -48,6 +54,7 @@ class Profil {
         mediaElements.forEach(media => {
             media.addEventListener('click', (event) => {
             event.preventDefault();
+            // eslint-disable-next-line no-undef
             const lightbox = new LightBox(media);
             lightbox.openLightBox();
             });

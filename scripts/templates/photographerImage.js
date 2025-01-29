@@ -1,3 +1,4 @@
+//eslint-disable-next-line no-unused-vars
 class PhotographerImage {
     constructor(medias, photographer) {
         this.medias = medias;

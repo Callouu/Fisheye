@@ -1,3 +1,4 @@
+//eslint-disable-next-line no-unused-vars
 class PhotographerHeader {
     constructor(photographer, idURL) {
         this.photographer = photographer;

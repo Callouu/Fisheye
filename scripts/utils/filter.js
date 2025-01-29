@@ -31,6 +31,7 @@ if(filterAlreadySelected) {
 }
 filterAlreadySelected = filter;
 filterAlreadySelected.style.display = 'none';
+// eslint-disable-next-line no-undef
 profile.applyFilter(filter.textContent)
 })
 })

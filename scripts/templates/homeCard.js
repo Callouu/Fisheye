@@ -1,4 +1,5 @@
 // Création d'une classe HomeCard
+//eslint-disable-next-line no-unused-vars
 class HomeCard {
     // Le constructeur prend en paramètre les données de la page d'accueil
     constructor(photographer) {
