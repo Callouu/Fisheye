@@ -21,7 +21,6 @@ class Home {
         // Crée une nouvelle carte grace à notre template HomeCard
         // eslint-disable-next-line no-undef
         const TemplateHome = new HomeCard(photographer);
-        // Ajoute le template
         this.photographer_home.append(TemplateHome.createHomeCard());
       });
     }

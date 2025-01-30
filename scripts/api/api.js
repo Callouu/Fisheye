@@ -31,7 +31,6 @@ class PhotographerApi extends Api {
 
     async getPhotographer(id) {
         const result = await this.get()
-        console.log(result.photographers.length)
         for(let i=0; i < result.photographers.length; i++) {
             const photographer = result.photographers[i]
             // si l'id cherché est egal a l'id du photgrapher qu'on analyse alors je le renvoie
@@ -50,7 +49,6 @@ class PhotographerApi extends Api {
     async getMediasFromPhotographer(id) {
         const result = await this.get()
         const medias = []
-        console.log(result)
         for(let i=0; i < result.media.length; i++) {
             const media = result.media[i]
             // si l'id cherché est egal a l'id du photgrapher qu'on analyse alors je le renvoie

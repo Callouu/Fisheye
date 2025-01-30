@@ -1,3 +1,4 @@
+// Objet pour la page du photographe
 class Profil {
     constructor() {
         //eslint-disable-next-line no-undef
@@ -21,9 +22,9 @@ class Profil {
             this.medias = await this.dataApi.getMediasFromPhotographer(this.id);
             // On affiche le contenu
             this.content()
-            this.contactForm()
         }
     }
+
     //Contenu HTML qui sera envoyé dans le main()
     content() {
         // Affiche le Header
@@ -60,8 +61,12 @@ class Profil {
             lightbox.openLightBox();
             });
         });
+        // Affiche le nom du photographe dans le formulaire
+        const formName = document.getElementById('modal_photographer')
+        formName.innerText = this.photographer.name
 
     }
+
     // Ajoute ou retire les likes
     like(id){
         for (let i = 0; i < profile.medias.length; i++) {
@@ -75,12 +80,13 @@ class Profil {
                     profile.medias[i]["likes"]-=1;
                     profile.medias[i]["is_liked"]=false;
                 }
-                // je redraw la page
+                // je redraw mes medias
                 profile.content()
                 return
             }
         }
     }
+
     // Filtre les medias
     applyFilter(filter){
         // on recupere la valeur du select
@@ -106,11 +112,6 @@ class Profil {
         }
         this.medias = mediasFiltered
         this.content();
-    }
-    // Affiche le nom du photographe dans le formulaire
-    contactForm() {
-        const formName = document.getElementById('modal_photographer')
-        formName.innerText = this.photographer.name
     }
 }
 
