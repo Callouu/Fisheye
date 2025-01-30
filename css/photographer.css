@@ -1,3 +1,4 @@
+/* PHOTOGRAPHER HEADER */
 .main_about {
     display: flex;
     justify-content: space-between;
@@ -241,7 +242,8 @@
 .lightbox img,
 .lightbox video {
     max-width: 95%;
-    height: calc(90% - 50px)
+    height: calc(90% - 50px);
+    object-fit: cover;
 }
 
 .lightbox .close {
