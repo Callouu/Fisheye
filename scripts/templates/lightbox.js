@@ -6,6 +6,7 @@ class LightBox {
         this.currentIndex = this.mediaItems.findIndex(item => item.dataset.id === mediaElement.dataset.id);
         this.lightboxElement = this.createLightBox();
         this.bindEvents();
+        this.previouslyFocusedElement = null;
     }
 
     // Création de l'élément HTML ou sera envoyé notre média
@@ -47,6 +48,7 @@ class LightBox {
     }
     // Ouverture de la lightbox
     openLightBox() {
+        this.previouslyFocusedElement = document.activeElement;
         this.lightboxElement.style.display = 'flex';
         this.lightboxElement.querySelector('.close').focus()
         this.displayMedia();
@@ -55,6 +57,9 @@ class LightBox {
     // Fermeture de la lightbox
     closeLightBox() {
         this.lightboxElement.style.display = 'none';
+        if (this.previouslyFocusedElement) {
+            this.previouslyFocusedElement.focus();
+        }
     }
 
     // Affichage de l'image / vidéo

@@ -35,10 +35,12 @@ function trapFocus(e) {
     return trapFocus(e);
   }
 
+let previouslyFocusedElement;
 
 // Afficher le formulaire
 //eslint-disable-next-line no-unused-vars
 function displayModal() {
+    previouslyFocusedElement = document.activeElement;
     const modal = document.getElementById("contact_modal");
     modal.style.display = "flex";
     document.addEventListener(`keydown`, initTrapFocus);
@@ -52,6 +54,9 @@ function closeModal() {
     modal.style.display = "none";
     document.removeEventListener(`keydown`, initTrapFocus);
     document.removeEventListener('keydown', handleEscapeKey);
+    if (previouslyFocusedElement) {
+        previouslyFocusedElement.focus();
+    }
 }
 
 // Fermeture du formulaire avec le bouton croix
