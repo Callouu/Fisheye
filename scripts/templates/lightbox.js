@@ -46,12 +46,40 @@ class LightBox {
         this.lightboxElement.querySelector('.next').addEventListener('click', () => this.showNextMedia());
         this.displayMedia();
     }
+
+    trapFocus() {
+        const focusableElements = this.lightboxElement.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+    
+        this.lightboxElement.addEventListener('keydown', (e) => {
+            const isTabPressed = (e.key === 'Tab' || e.keyCode === 9);
+    
+            if (!isTabPressed) {
+                return;
+            }
+    
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        });
+    }
+
     // Ouverture de la lightbox
     openLightBox() {
         this.previouslyFocusedElement = document.activeElement;
         this.lightboxElement.style.display = 'flex';
         this.lightboxElement.querySelector('.close').focus()
         this.displayMedia();
+        this.trapFocus();
     }
 
     // Fermeture de la lightbox

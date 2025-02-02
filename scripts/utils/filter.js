@@ -16,7 +16,7 @@ filterMenuButton.addEventListener("click", () => {
     filterButtons.forEach(button => button.setAttribute("tabindex", newTabIndexValue));
 });
 
-// Close dropdown when clicking outside
+// Fermeture du bouton après avec cliquer en dehors
 document.addEventListener("click", (event) => {
     if (!filterMenu.contains(event.target) && !filterMenuButton.contains(event.target)) {
         filterMenu.classList.remove("curtain_effect");
