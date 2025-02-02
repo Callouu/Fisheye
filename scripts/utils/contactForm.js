@@ -4,9 +4,9 @@ const firstName = document.getElementById('firstname')
 const lastName = document.getElementById('lastname')
 const email = document.getElementById('email')
 const message = document.getElementById('message')
-const nameRegex = new RegExp("^[a-zA-Z-]{3,}$")
-const emailRegex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+")
-const messageRegex = new RegExp("[A-Za-z0-9|]{10,200}")
+// const nameRegex = new RegExp("^[a-zA-Z-]{3,}$")
+// const emailRegex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+")
+// const messageRegex = new RegExp("[A-Za-z0-9|]{10,200}")
 
 function trapFocus(e) {
     const isTabPressed = e.key === `Tab`;

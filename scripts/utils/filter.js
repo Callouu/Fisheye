@@ -2,7 +2,6 @@ const filterMenu = document.querySelector(".dropdown_content");
 const filterMenuButton = document.querySelector(".btn_drop");
 const filterButtons = document.querySelectorAll(".dropdown_content button");
 const filterMenuList = filterMenu.querySelector("ul");
-const filterItems = filterMenu.querySelectorAll("ul li");
 
 function trapFocus(event) {
     const focusableElements = filterMenuList.querySelectorAll('li');
@@ -84,6 +83,7 @@ profile.applyFilter(filter.textContent)
 filter.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         filterMenuButton.focus();
+        // eslint-disable-next-line no-undef
         profile.applyFilter(filter.textContent)
     }   
 });
