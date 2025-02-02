@@ -73,15 +73,29 @@ class Profil {
             const mediaId = profile.medias[i]["id"];
             // si je trouve le media que j'ai like, j'incremente
             if(id == mediaId) {
+                const test = document.querySelector(`button[id="${id}"]`)
+                const span = test.querySelector('span')
+                const countSpan = document.querySelector(`article[id="${id}"] .count`);
+                const globalCount = document.querySelector('.likes_count span')
                 if(profile.medias[i]["is_liked"] != true) {
                     profile.medias[i]["likes"]+=1;
                     profile.medias[i]["is_liked"]=true;
+                    // redraw
+                    span.classList.remove('nolike');
+                    span.classList.add('liked');
+                    countSpan.innerText = profile.medias[i]["likes"]
+                    globalCount.innerText = parseInt(globalCount.innerText) + 1
                 }else {
                     profile.medias[i]["likes"]-=1;
                     profile.medias[i]["is_liked"]=false;
+                    // redraw
+                    span.classList.remove('liked');
+                    span.classList.add('nolike')
+                    countSpan.innerText = profile.medias[i]["likes"]
+                    globalCount.innerText = parseInt(globalCount.innerText) - 1
                 }
                 // je redraw mes medias
-                profile.content()
+                // profile.content()
                 return
             }
         }
