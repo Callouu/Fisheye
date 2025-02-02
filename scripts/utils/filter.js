@@ -1,6 +1,28 @@
 const filterMenu = document.querySelector(".dropdown_content");
 const filterMenuButton = document.querySelector(".btn_drop");
 const filterButtons = document.querySelectorAll(".dropdown_content button");
+const filterMenuList = filterMenu.querySelector("ul");
+const filterItems = filterMenu.querySelectorAll("ul li");
+
+function trapFocus(event) {
+    const focusableElements = filterMenuList.querySelectorAll('li');
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (event.key === 'Tab') {
+        if (event.shiftKey) { // Shift + Tab
+            if (document.activeElement === firstElement) {
+                lastElement.focus();
+                event.preventDefault();
+            }
+        } else { // Tab
+            if (document.activeElement === lastElement) {
+                firstElement.focus();
+                event.preventDefault();
+            }
+        }
+    }
+}
 
 // Affichage du menu déroulant
 filterMenuButton.addEventListener("click", () => {
@@ -14,6 +36,13 @@ filterMenuButton.addEventListener("click", () => {
 
     const newTabIndexValue = filterMenu.classList.contains("curtain_effect") ? "0" : "-1";
     filterButtons.forEach(button => button.setAttribute("tabindex", newTabIndexValue));
+
+    if (filterMenu.classList.contains("curtain_effect")) {
+        filterMenu.addEventListener('keydown', trapFocus);
+    } else {
+        filterMenu.removeEventListener('keydown', trapFocus);
+    }
+
 });
 
 // Fermeture du bouton après avec cliquer en dehors
@@ -24,6 +53,7 @@ document.addEventListener("click", (event) => {
         document.querySelector(".fa-chevron-up").classList.remove("rotate");
         filterMenu.setAttribute("aria-hidden", "true");
         filterButtons.forEach(button => button.setAttribute("tabindex", "-1"));
+        filterMenu.removeEventListener('keydown', trapFocus);
     }
 });
 
