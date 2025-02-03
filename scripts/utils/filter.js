@@ -4,7 +4,7 @@ const filterButtons = document.querySelectorAll(".dropdown_content button");
 const filterMenuList = filterMenu.querySelector("ul");
 
 function trapFocus(event) {
-    const focusableElements = filterMenuList.querySelectorAll('li');
+    const focusableElements = Array.from(filterButtons);
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
 
@@ -23,6 +23,21 @@ function trapFocus(event) {
     }
 }
 
+function handleArrowNavigation(event) {
+    const focusableElements = Array.from(filterButtons);
+    const currentIndex = focusableElements.indexOf(document.activeElement);
+
+    if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        const nextIndex = (currentIndex + 1) % focusableElements.length;
+        focusableElements[nextIndex].focus();
+    } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        const prevIndex = (currentIndex - 1 + focusableElements.length) % focusableElements.length;
+        focusableElements[prevIndex].focus();
+    }
+}
+
 // Affichage du menu déroulant
 filterMenuButton.addEventListener("click", () => {
     const isExpanded = filterMenuButton.getAttribute("aria-expanded") === "true" || false;
@@ -38,8 +53,11 @@ filterMenuButton.addEventListener("click", () => {
 
     if (filterMenu.classList.contains("curtain_effect")) {
         filterMenu.addEventListener('keydown', trapFocus);
+        filterMenu.addEventListener('keydown', handleArrowNavigation);
+        filterButtons[0].focus();
     } else {
         filterMenu.removeEventListener('keydown', trapFocus);
+        filterMenu.removeEventListener('keydown', handleArrowNavigation);
     }
 
 });
@@ -53,6 +71,7 @@ document.addEventListener("click", (event) => {
         filterMenu.setAttribute("aria-hidden", "true");
         filterButtons.forEach(button => button.setAttribute("tabindex", "-1"));
         filterMenu.removeEventListener('keydown', trapFocus);
+        filterMenu.removeEventListener('keydown', handleArrowNavigation);
     }
 });
 
