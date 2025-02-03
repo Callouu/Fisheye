@@ -1,10 +1,12 @@
 const filterMenu = document.querySelector(".dropdown_content");
+const allButtons = document.querySelectorAll(".dropdown button")
 const filterMenuButton = document.querySelector(".btn_drop");
 const filterButtons = document.querySelectorAll(".dropdown_content button");
 const filterMenuList = filterMenu.querySelector("ul");
 
+
 function trapFocus(event) {
-    const focusableElements = Array.from(filterButtons);
+    const focusableElements = Array.from(allButtons);
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
 
@@ -24,14 +26,15 @@ function trapFocus(event) {
 }
 
 function handleArrowNavigation(event) {
-    const focusableElements = Array.from(filterButtons);
+    const focusableElements = Array.from(allButtons);
     const currentIndex = focusableElements.indexOf(document.activeElement);
 
-    if (event.key === 'ArrowDown') {
+    if (event.key === 'Tab') {
         event.preventDefault();
         const nextIndex = (currentIndex + 1) % focusableElements.length;
         focusableElements[nextIndex].focus();
-    } else if (event.key === 'ArrowUp') {
+
+    } else if (event.key === 'Tab') {
         event.preventDefault();
         const prevIndex = (currentIndex - 1 + focusableElements.length) % focusableElements.length;
         focusableElements[prevIndex].focus();
